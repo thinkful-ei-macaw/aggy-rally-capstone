@@ -1,0 +1,14 @@
+New users entering the site are directed to the about page or the sign up page. On the sign up they enter some basic account info, and are then directed
+over to the mandatory form, to fill out the account questionnaire. This questionnaire is the main focus of the site, acting as the means in which 
+users and matched with one another, based on like-mindedness in their preferences. 
+
+Returning users log in and may alter their questionnaire, add additional information to help narrow match results, and contact their player matches. 
+Upon logging in they are immediately brought to their questionnaire, and may navigate to the match section to see likeminded players.
+
+
+Welcome page directs users to log in page, sign up page, or about page.
+
+Sign up leads to m-form, indicating to the user to follow the questions down the page till all mandatory fields are filled, then to submit. Submission leads
+to the Profile page. The Profile pages displays general info about your interests.
+
+At the top of most pages there are navs that lead to Match, or profile, or the editable m-form.
