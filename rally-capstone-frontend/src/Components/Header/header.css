@@ -1,0 +1,21 @@
+.header-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    height: 3rem;
+    background-color: #313131;
+    color: palegoldenrod;
+}
+
+h2 {
+    
+}
+
+.header-nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

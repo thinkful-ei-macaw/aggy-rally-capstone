@@ -13,7 +13,11 @@ export default class Register extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { user_name, password } = ev.target
+        const { user_name, password, confirm__password } = ev.target.elements
+
+        if(confirm__password !== password){
+            return 'Passwords did not match'
+        }
 
         this.setState({ error: null })
         AuthApi.postUser({
@@ -54,6 +58,16 @@ export default class Register extends Component {
                     type='password'
                     required
                     id='Register__password'
+                   >
+                   </Input>
+               </div>
+               <div className='password'>
+                   <label htmlFor='Register__password'>Confirm Password<Required /></label>
+                   <Input 
+                    name='confirm__password'
+                    type='password'
+                    required
+                    id='Register__password__two'
                    >
                    </Input>
                </div>

@@ -1,37 +1,31 @@
-import React, { Component } from 'react';
-import { Switch } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header/Header'
+import Landing from './Components/Landing/Landing';
 import Main from './Components/Main/Main';
-import Footer from './Components/Footer/Footer';
+
 
 class App extends React.Component {
   state = {
-    
+    hasError: false
   }
 
-  
-
-  componentDidMount() {
-
-  }
-
-  render() {
-    const contextValue = {
-      data: this.state,
-
-    }
-  }
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Header />
-        <Main />
-        <Footer />
-      </header>
+  render() {  
+    return (
+    <div className='App'>
+        <Switch>
+          <Route
+            path={'/welcome'}
+            component={Landing}
+          />
+          <Route
+            exact
+            path={'/main'}
+            component={Main}
+          />
+        </Switch>
     </div>
   );
 }
-
+}
 export default App;
