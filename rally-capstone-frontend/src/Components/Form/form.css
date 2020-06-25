@@ -3,6 +3,6 @@
     flex-direction: column;
 }
 
-label {
+label, form {
     padding: 1rem;
 }

@@ -4,8 +4,9 @@ export default class About extends React.Component {
     
    render(){ 
        return (
-        <div>
-            
+        <div className="about-wrap">
+            <h2>About Rally!</h2>
+            <p>Under Construction!</p>
         </div>
     )}
 }
