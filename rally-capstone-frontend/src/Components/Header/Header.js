@@ -1,5 +1,6 @@
 import React from 'react';
 import './header.css';
+import { Link } from 'react-router-dom';
 
 export default class Header extends React.Component {
     render(){
@@ -9,7 +10,7 @@ export default class Header extends React.Component {
             <input class='search' placeholder='Search' type='text' />
             <nav className='header-nav'>
                 <ul>
-                    <li>Active Profiles</li>
+                    <li><Link to="/main/createprofile">Create Match Profile</Link></li>
                     <li>Messages</li>
                     <li>Manage Account</li>
                     <li>Log Out</li>

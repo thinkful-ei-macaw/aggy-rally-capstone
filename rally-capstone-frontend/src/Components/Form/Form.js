@@ -29,7 +29,7 @@ export default class Form extends React.Component {
         profileApi.addProfiles(newProfile)
             .then(profile => {
                 this.props.onSuccess(profile)
-                this.props.history.push(`/`)
+                //this.props.history.push(`/`)
             })
             .catch(console.error)
     }
