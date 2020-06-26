@@ -1,5 +1,5 @@
 import jwtDecode from 'jwt-decode';
-import config from '../../config';
+import * as config from '../../config';
 
 const TokenService = {
     saveAuthToken(token) {

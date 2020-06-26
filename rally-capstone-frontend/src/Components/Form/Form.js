@@ -1,5 +1,6 @@
 import React from 'react'
 import './form.css'
+import profileApi from '../services/profile-api'
 
 export default class Form extends React.Component {
     constructor(props){
@@ -11,7 +12,26 @@ export default class Form extends React.Component {
 
     handleForm = (e) => {
         e.preventDefault()
-        
+
+        const gm = e.target.gamemaster.value
+        const genre = e.target.genre.value
+        const romance = e.target.romance.value
+        const frequency = e.target.frequency.value
+        const duration = e.target.duration.value
+        const alignment = e.target.alignment.value
+        const group = e.target.groupsize.value
+        const exp = e.target.exp.value
+        const gmexp = e.target.gmexp.value
+        const playerexp = e.target.playerexp.value
+
+        const newProfile = {gm, genre, romance, frequency, duration, alignment, group, exp, gmexp, playerexp}
+
+        profileApi.addProfiles(newProfile)
+            .then(profile => {
+                this.props.onSuccess(profile)
+                this.props.history.push(`/`)
+            })
+            .catch(console.error)
     }
 
     render(){
@@ -21,7 +41,7 @@ export default class Form extends React.Component {
             <p>It is our goal at Rally! is to match potential players together using a set of simple, but critical critera. We prefer not to allow options that are more generic,
                 such as 'anything is fine', or 'all of the above' specifically to foster more compatability. Please answer as accurately as possible, to improve match results!
             </p>
-            <form onSubmit={this.handleForm()}>
+            <form onSubmit={this.handleForm}>
                 <fieldset className="profile">
                     <legend>Create your Match Profile</legend>
                     <label for="gamemaster">Is this a GM profile?</label>
@@ -66,7 +86,7 @@ export default class Form extends React.Component {
                         <option value="chaotic">Chaotic</option>
                         <option value="neutral">Neutral</option>
                     </select>
-                    <label for="group-size">Desired group size including a GM?</label>
+                    <label for="groupsize">Desired group size including a GM?</label>
                     <select>
                         <option value="3">3</option>
                         <option value="4">4</option>
