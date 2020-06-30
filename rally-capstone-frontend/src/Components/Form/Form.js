@@ -45,12 +45,12 @@ export default class Form extends React.Component {
             <form onSubmit={this.handleForm}>
                 <fieldset className="profile">
                     <legend>Create your Match Profile</legend>
-                    <label for="gamemaster">Is this a GM profile?</label>
+                    <label htmlFor="gamemaster">Is this a GM profile?</label>
                     <select id="gamemaster">
                         <option value="yes">Yes</option>
                         <option value="no" selected="selected">No</option>
                     </select>
-                    <label for="genre">Desired Genre</label>
+                    <label htmlFor="genre">Desired Genre</label>
                     <select id="genre" name="genre">
                         <option value="fantasy">Fantasy</option>
                         <option value="sci-fi">Sci-fi</option>
@@ -61,25 +61,25 @@ export default class Form extends React.Component {
                         <option value="post-apocalyptic">Post-Apocalyptic</option>
                         <option value="slice-of-life">Slice of Life</option>
                     </select>
-                    <label for="romance">Romance acceptable within the game?</label>
+                    <label htmlFor="romance">Romance acceptable within the game?</label>
                     <select id="romance">
                         <option value="yes">Yes</option>
                         <option value="no" >No</option>
                     </select>
-                    <label for="frequency">How often do you prefer to play?</label>
+                    <label htmlFor="frequency">How often do you prefer to play?</label>
                     <select id="frequency" name="frequency">
                         <option value="twice-weekly">Twice Weekly</option>
                         <option value="weekly" selected="selected">Weekly</option>
                         <option value="bi-weekly">Bi-Weekly</option>
                         <option value="month">Month</option>
                     </select>
-                    <label for="duration">How long do you like a session to be?</label>
+                    <label htmlFor="duration">How long do you like a session to be?</label>
                     <select id="duration" name="duration">
                         <option value="short">Short 2 to 3 Hours</option>
                         <option value="average" selected="selected">Average 3 to 4 Hours</option>
                         <option value="long">Long 5+ Hours</option>
                     </select>
-                    <label for="alignment">Desired party alignment?</label>
+                    <label htmlFor="alignment">Desired party alignment?</label>
                     <select id="alignment" name="alignment">
                         <option value="good">Good</option>
                         <option value="evil">Evil</option>
@@ -87,7 +87,7 @@ export default class Form extends React.Component {
                         <option value="chaotic">Chaotic</option>
                         <option value="neutral">Neutral</option>
                     </select>
-                    <label for="groupsize">Desired group size including a GM?</label>
+                    <label htmlFor="groupsize">Desired group size including a GM?</label>
                     <select>
                         <option value="3">3</option>
                         <option value="4">4</option>
@@ -95,7 +95,7 @@ export default class Form extends React.Component {
                         <option value="6">6</option>
                         <option value="7">7</option>
                     </select>
-                    <label for="exp">How many years have you been roleplaying?</label>
+                    <label htmlFor="exp">How many years have you been roleplaying?</label>
                     <select id="exp">
                         <option value="0">0</option>
                         <option value="1" >1</option>
@@ -103,12 +103,12 @@ export default class Form extends React.Component {
                         <option value="3" >3</option>
                         <option value="4+" >4+</option>
                     </select>
-                    <label for="gmexp">Have you ever been a GM?</label>
+                    <label htmlFor="gmexp">Have you ever been a GM?</label>
                     <select id="gmexp">
                         <option value="yes">Yes</option>
                         <option value="no" >No</option>
                     </select>
-                    <label for="playerexp">Have you ever been a player?</label>
+                    <label htmlFor="playerexp">Have you ever been a player?</label>
                     <select id="playerexp">
                         <option value="yes">Yes!</option>
                         <option value="no" >No!</option>

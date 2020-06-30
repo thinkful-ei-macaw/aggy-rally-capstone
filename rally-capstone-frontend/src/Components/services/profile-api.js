@@ -8,7 +8,7 @@ const profileFetch = (...params) => {
 }
 
 const getProfile = () => {
-    return profileFetch(API_ENDPOINT + 'profiles');
+    return profileFetch(API_ENDPOINT + 'profiles/2'); //figure out a better way to get userid 
 }
 
 const addProfiles = profile => {
