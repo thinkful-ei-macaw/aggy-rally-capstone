@@ -25,9 +25,9 @@ class App extends React.Component {
           <Route exact path='/main' render={(props) => (
             <Main {...props} loggedIn={this.state.loggedIn}/>
           )}/>
-          <Route path='*' render={() =>(
+          {/* <Route path='*' render={() =>(
           <Redirect to='/welcome'/>
-          )}/>
+          )}/> */}
         </Switch>
     </div>
   );

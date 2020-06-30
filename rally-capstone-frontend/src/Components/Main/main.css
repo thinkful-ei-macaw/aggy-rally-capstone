@@ -1,4 +1,33 @@
+body {
+    background-color: #313131;
+}
+
+main h1 {
+    padding: 1rem;
+}
+
 .main-wrap {
     padding-left: 1rem;
     padding-right: 1rem;
+    color: palegoldenrod;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #636363;
+}
+
+button {
+    border: none;
+    text-decoration: none;
+    background-color: inherit;
+    color: palegoldenrod;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem;
+}
+
+#wrap {
+    padding: 1rem;
+    margin-left: 6rem;
+    margin-right: 6rem;
 }

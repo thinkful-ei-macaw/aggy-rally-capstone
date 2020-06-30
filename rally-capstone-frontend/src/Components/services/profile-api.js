@@ -4,8 +4,7 @@ const profileFetch = (...params) => {
     return fetch(...params)
         .then(res => {
             return res.json();
-        })
-        .catch(err => Promise.reject('There was an issue!'));
+        });
 }
 
 const getProfile = () => {

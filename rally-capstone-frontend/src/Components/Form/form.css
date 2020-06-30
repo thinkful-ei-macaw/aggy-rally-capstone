@@ -6,3 +6,7 @@
 label, form {
     padding: 1rem;
 }
+
+select {
+    margin-left: 1rem;
+}

@@ -1,7 +1,8 @@
 import React from 'react';
+import './landing.css'
 import Login from '../Login/Login';
 import Register from '../Register/Register';
-import { Button } from '../Utility/Utility'
+import { Button } from '../Utility/Utility';
 
 export default class Landing extends React.Component {
     constructor(props){
@@ -15,6 +16,7 @@ export default class Landing extends React.Component {
     handleButtonLog = (e) => {
         e.preventDefault()
         this.setState({ log: true})
+        //async in here for splash
     }
 
     handleButtonReg = (e) => {
@@ -27,7 +29,7 @@ export default class Landing extends React.Component {
         this.setState({ log: false, reg: false })
     }
 
-    display = () => {
+    displayLanding = () => {
         if(this.state.log === false && this.state.reg === false){
             return <>
                 <Button id="log-in" onClick={this.handleButtonLog}>Log In</Button>
@@ -50,7 +52,7 @@ export default class Landing extends React.Component {
         return (
         <div className="landing-wrap">
             <h1>Rally!</h1>
-            {this.display()}
+            {this.displayLanding()}
         </div>
     )}
 }

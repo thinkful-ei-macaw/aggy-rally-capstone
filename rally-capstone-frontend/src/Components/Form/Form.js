@@ -1,6 +1,7 @@
 import React from 'react'
 import './form.css'
 import profileApi from '../services/profile-api'
+import { Button } from '../Utility/Utility';
 
 export default class Form extends React.Component {
     constructor(props){
@@ -22,21 +23,21 @@ export default class Form extends React.Component {
         const group = e.target.groupsize.value
         const exp = e.target.exp.value
         const gmexp = e.target.gmexp.value
-        const playerexp = e.target.playerexp.value
+        const playexp = e.target.playexp.value
 
-        const newProfile = {gm, genre, romance, frequency, duration, alignment, group, exp, gmexp, playerexp}
+        const newProfile = {gm, genre, romance, frequency, duration, alignment, group, exp, gmexp, playexp}
 
         profileApi.addProfiles(newProfile)
             .then(profile => {
                 this.props.onSuccess(profile)
-                //this.props.history.push(`/`)
+                this.props.history.push(`/main`) //redirects on submission, set url accordingly
             })
             .catch(console.error)
     }
 
     render(){
         return (
-        <div className="form-wrap">
+        <div className="form-wrap" id="wrap">
             <h2>Match Profiles</h2>
             <p>It is our goal at Rally! is to match potential players together using a set of simple, but critical critera. We prefer not to allow options that are more generic,
                 such as 'anything is fine', or 'all of the above' specifically to foster more compatability. Please answer as accurately as possible, to improve match results!
@@ -112,7 +113,7 @@ export default class Form extends React.Component {
                         <option value="yes">Yes!</option>
                         <option value="no" >No!</option>
                     </select>
-                    <button type="submit">Submit</button>
+                    <Button type="submit">Submit</Button>
                 </fieldset>
             </form>
         </div>
