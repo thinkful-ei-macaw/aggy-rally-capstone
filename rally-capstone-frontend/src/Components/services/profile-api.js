@@ -15,11 +15,11 @@ const getProfile = () => {
     }); 
 }
 
-// const getProfileMatches = () => {
-//     return profileFetch(API_ENDPOINT + '/profiles', {
+const getProfileMatches = () => {
+    return profileFetch(API_ENDPOINT + '/profiles', {
 
-//     })
-// }
+    })
+}
 
 const addProfiles = profile => {
     return profileFetch(API_ENDPOINT + '/profiles', {
@@ -32,4 +32,5 @@ const addProfiles = profile => {
 export default {
     getProfile,
     addProfiles,
+    getProfileMatches,
 }

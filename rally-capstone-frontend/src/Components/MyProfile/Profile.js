@@ -6,7 +6,7 @@ export default class Profile extends React.Component {
         profile: {}
     }
 
-    async componentDidMount(){
+    componentDidMount(){
         profileApi.getProfile()
             .then(data => { this.setState({ profile: data }) })
             .catch()

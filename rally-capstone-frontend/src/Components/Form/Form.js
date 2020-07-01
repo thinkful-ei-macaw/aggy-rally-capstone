@@ -87,7 +87,7 @@ export default class Form extends React.Component {
                         <option value="chaotic">Chaotic</option>
                         <option value="neutral">Neutral</option>
                     </select>
-                    <label htmlFor="groupsize">Desired group size including a GM?</label>
+                    <label htmlFor="group">Desired group size including a GM?</label>
                     <select>
                         <option value="3">3</option>
                         <option value="4">4</option>

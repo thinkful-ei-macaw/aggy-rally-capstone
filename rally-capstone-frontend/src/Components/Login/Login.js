@@ -14,10 +14,10 @@ export default class Login extends Component {
 
     handleSubmitJwtAuth = ev => {
         ev.preventDefault()
+        const { user_name, password } = ev.target
         this.setState({
             error: null
         })
-        const { user_name, password } = ev.target
 
         AuthApi.postLogin({
             user_name: user_name.value,
@@ -29,8 +29,8 @@ export default class Login extends Component {
                 TokenService.saveAuthToken(res.authToken)
                 this.props.onLoginSuccess()
             })
-            .catch(res => {
-                this.setState({ error: res.error })
+            .catch(err => {
+                console.error(err.message)
             })
     }
 

@@ -1,10 +1,7 @@
-h1 {
-    color: palegoldenrod;
-}
-
 .landing-wrap {
     display: flex;
     align-items: center;
     flex-direction: column;
     padding: 2rem;
+    color: palegoldenrod;
 }

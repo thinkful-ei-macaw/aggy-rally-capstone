@@ -13,14 +13,12 @@ export default class Register extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-
         const { user_name, password, confirm__password } = ev.target.elements
 
-        if(confirm__password !== password){
+        if(confirm__password.value !== password.value){
             return 'Passwords did not match'
         }
 
-        this.setState({ error: null })
         AuthApi.postUser({
             user_name: user_name.value,
             password: password.value,
@@ -28,10 +26,12 @@ export default class Register extends Component {
             .then(user => {
                 user_name.value = ''
                 password.value = ''
+                confirm__password.value = ''
                 this.props.onRegistrationSuccess()
+                //this.setState({ error: null })
             })
-            .catch(res => {
-                this.setState({ error: res.error })
+            .catch(err => {
+                console.error(err.message)
             })
     }
 
