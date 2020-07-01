@@ -13,6 +13,7 @@ export default class Register extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
+
         const { user_name, password, confirm__password } = ev.target.elements
 
         if(confirm__password !== password){

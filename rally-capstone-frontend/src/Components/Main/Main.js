@@ -6,6 +6,7 @@ import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 import Profile from '../MyProfile/Profile';
 import Matches from '../Matches/Matches';
+import TokenService from '../services/token';
 
 export default class Main extends React.Component {
     constructor(props){
@@ -64,6 +65,7 @@ export default class Main extends React.Component {
         this.setState({ 
             loggedIn: false,
         })
+        TokenService.clearAuthToken()
     }
 
     displayMain = () => {

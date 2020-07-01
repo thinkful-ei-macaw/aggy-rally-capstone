@@ -3,26 +3,35 @@ import profileApi from '../services/profile-api';
 
 export default class Profile extends React.Component {
     state = {
-        profile: []
+        profile: {}
     }
 
-    componentDidMount(){
+    async componentDidMount(){
         profileApi.getProfile()
             .then(data => { this.setState({ profile: data }) })
             .catch()
     }
 
-    // displayProfile = () => {
-    //     let profile = this.state.profile
-    //     console.log(profile)
-    //     if(profile.id){let result = profile.map((profile => {
-    //             return <div>
-    //                 <p>{profile.gamemaster}</p>
-    //             </div>
-    //         }))
-    //         return result
-    //     }
-    // }
+    displayProfile = () => {
+        let profile = this.state.profile
+        console.log(profile)
+        if(profile.userid){
+                return <div>
+                    <ul>
+                        <li>{profile.gamemaster}</li>
+                        <li>{profile.genre}</li>
+                        <li>{profile.romance}</li>
+                        <li>{profile.frequency}</li>
+                        <li>{profile.duration}</li>
+                        <li>{profile.alignment}</li>
+                        <li>{profile.groupsize}</li>
+                        <li>{profile.exp}</li>
+                        <li>{profile.gmexp}</li>
+                        <li>{profile.playexp}</li>
+                    </ul>
+                </div>
+        }
+    }
 
     render(){
         return (

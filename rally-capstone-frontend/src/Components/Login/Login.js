@@ -37,10 +37,10 @@ export default class Login extends Component {
     render() {
         const { error } = this.state
         return (
-            <form  
-                className='LoginForm'
-                onSubmit={this.handleSubmitJwtAuth}>
-                
+            <form  className='LoginForm' onSubmit={this.handleSubmitJwtAuth}>
+                <div role='alert'>
+                   {error && <p className='oops'>{error}</p>}
+               </div>
                 <div className='user'>
                     <label htmlFor='Login__user'>
                         User Name

@@ -3,6 +3,7 @@ import './landing.css'
 import Login from '../Login/Login';
 import Register from '../Register/Register';
 import { Button } from '../Utility/Utility';
+import { Redirect } from 'react-router-dom';
 
 export default class Landing extends React.Component {
     constructor(props){
@@ -37,18 +38,21 @@ export default class Landing extends React.Component {
             </>
         }else if(this.state.log === false && this.state.reg === true){
             return <>
-                <Register />
+                <Register onRegistrationSuccess={this.props.onReg} />
                 <Button id="cancel" onClick={this.handleButtonCan}>Back</Button>
             </>
         }else if(this.state.log === true && this.state.reg === false){
             return <>
-                <Login />
+                <Login onLoginSuccess={this.props.onLog}/>
                 <Button id="cancel" onClick={this.handleButtonCan}>Back</Button>
             </>
         }
     }
 
     render(){
+        if(this.props.loggedIn === true){
+            return <Redirect to='/main'/>
+        }
         return (
         <div className="landing-wrap">
             <h1>Rally!</h1>

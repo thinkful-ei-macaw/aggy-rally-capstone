@@ -11,8 +11,14 @@ class App extends React.Component {
     loggedIn: false,
   }
 
-  handleLogIn = (loggedIn) => {
+  handleLogIn = () => {
+    this.setState({
+      loggedIn: true,
+    })
+  }
 
+  handleReg = () => {
+    
   }
 
   render() {  
@@ -20,13 +26,17 @@ class App extends React.Component {
     <div className='App'>
         <Switch>
           <Route path='/welcome' render={(props) => (
-            <Landing {...props} onSuccess={this.handleLogIn}/>
+            <Landing {...props} 
+              loggedIn={this.state.loggedIn} 
+              onLog={this.handleLogIn}
+              onReg={this.handleReg}
+              />
           )}/>
           <Route exact path='/main' render={(props) => (
             <Main {...props} loggedIn={this.state.loggedIn}/>
           )}/>
           <Route path='/' render={() =>(
-          <Redirect to='/welcome'/>
+            <Redirect to='/welcome'/>
           )}/>
         </Switch>
     </div>
