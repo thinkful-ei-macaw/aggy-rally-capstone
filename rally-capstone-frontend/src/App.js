@@ -5,7 +5,7 @@ import Landing from './Components/Landing/Landing';
 import Main from './Components/Main/Main';
 
 
-class App extends React.Component {
+export default class App extends React.Component {
   state = {
     hasError: false,
     loggedIn: false,
@@ -43,4 +43,3 @@ class App extends React.Component {
   );
 }
 }
-export default App;

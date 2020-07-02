@@ -17,14 +17,18 @@ const getProfile = () => {
 
 const getProfileMatches = () => {
     return profileFetch(API_ENDPOINT + '/profiles', {
-
+        headers: { 'authorization': 'bearer ' + TokenService.getAuthToken()},
+        body: JSON.stringify()
     })
 }
 
 const addProfiles = profile => {
     return profileFetch(API_ENDPOINT + '/profiles', {
         method: 'POST',
-        headers: { 'content-type': 'application/json'},
+        headers: { 
+            'content-type': 'application/json',
+            'authorization': 'bearer ' + TokenService.getAuthToken()
+        },
         body: JSON.stringify(profile)
     });
 }

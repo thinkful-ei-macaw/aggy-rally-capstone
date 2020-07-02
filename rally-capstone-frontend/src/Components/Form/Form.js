@@ -1,13 +1,14 @@
-import React from 'react'
-import './form.css'
-import profileApi from '../services/profile-api'
+import React from 'react';
+import './form.css';
+import profileApi from '../services/profile-api';
 import { Button } from '../Utility/Utility';
+import { withRouter } from 'react-router-dom';
 
 export default class Form extends React.Component {
     constructor(props){
         super(props)
             this.state = {
-
+                profile: {}
             }
     }
 
@@ -20,17 +21,17 @@ export default class Form extends React.Component {
         const frequency = e.target.frequency.value
         const duration = e.target.duration.value
         const alignment = e.target.alignment.value
-        const group = e.target.groupsize.value
+        const groupsize = e.target.groupsize.value
+        const pvp = e.target.pvp.value
         const exp = e.target.exp.value
         const gmexp = e.target.gmexp.value
         const playexp = e.target.playexp.value
 
-        const newProfile = {gm, genre, romance, frequency, duration, alignment, group, exp, gmexp, playexp}
+        const newProfile = {gm, genre, romance, frequency, duration, alignment, groupsize, pvp, exp, gmexp, playexp}
 
         profileApi.addProfiles(newProfile)
             .then(profile => {
-                this.props.onSuccess(profile)
-                this.props.history.push(`/main`) //redirects on submission, set url accordingly
+                //possibly redirect later
             })
             .catch(console.error)
     }
@@ -46,9 +47,9 @@ export default class Form extends React.Component {
                 <fieldset className="profile">
                     <legend>Create your Match Profile</legend>
                     <label htmlFor="gamemaster">Is this a GM profile?</label>
-                    <select id="gamemaster">
-                        <option value="yes">Yes</option>
-                        <option value="no" selected="selected">No</option>
+                    <select id="gamemaster" name="gamemaster" defaultValue="no">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
                     </select>
                     <label htmlFor="genre">Desired Genre</label>
                     <select id="genre" name="genre">
@@ -62,41 +63,46 @@ export default class Form extends React.Component {
                         <option value="slice-of-life">Slice of Life</option>
                     </select>
                     <label htmlFor="romance">Romance acceptable within the game?</label>
-                    <select id="romance">
-                        <option value="yes">Yes</option>
-                        <option value="no" >No</option>
+                    <select id="romance" name="romance">
+                        <option value="true">Yes</option>
+                        <option value="false" >No</option>
                     </select>
                     <label htmlFor="frequency">How often do you prefer to play?</label>
-                    <select id="frequency" name="frequency">
-                        <option value="twice-weekly">Twice Weekly</option>
-                        <option value="weekly" selected="selected">Weekly</option>
-                        <option value="bi-weekly">Bi-Weekly</option>
-                        <option value="month">Month</option>
+                    <select id="frequency" name="frequency" defaultValue="Bi-weekly">
+                        <option value="Twice-weekly">Twice Weekly</option>
+                        <option value="Weekly">Weekly</option>
+                        <option value="Bi-weekly">Bi-Weekly</option>
+                        <option value="Month">Month</option>
                     </select>
                     <label htmlFor="duration">How long do you like a session to be?</label>
-                    <select id="duration" name="duration">
-                        <option value="short">Short 2 to 3 Hours</option>
-                        <option value="average" selected="selected">Average 3 to 4 Hours</option>
-                        <option value="long">Long 5+ Hours</option>
+                    <select id="duration" name="duration" defaultValue="average">
+                        <option value="Short 2 to 3 Hours">Short 2 to 3 Hours</option>
+                        <option value="Average 3 to 4 Hours">Average 3 to 4 Hours</option>
+                        <option value="Long 5+ Hours">Long 5+ Hours</option>
                     </select>
                     <label htmlFor="alignment">Desired party alignment?</label>
                     <select id="alignment" name="alignment">
-                        <option value="good">Good</option>
-                        <option value="evil">Evil</option>
-                        <option value="lawful">Lawful</option>
-                        <option value="chaotic">Chaotic</option>
-                        <option value="neutral">Neutral</option>
+                        <option value="Good">Good</option>
+                        <option value="Evil">Evil</option>
+                        <option value="Lawful">Lawful</option>
+                        <option value="Chaotic">Chaotic</option>
+                        <option value="Neutral">Neutral</option>
                     </select>
-                    <label htmlFor="group">Desired group size including a GM?</label>
-                    <select>
+                    <label htmlFor="groupsize">Desired group size including a GM?</label>
+                    <select id="groupsize" name="groupsize" defaultValue="5">
                         <option value="3">3</option>
                         <option value="4">4</option>
-                        <option value="5" selected="selected">5</option>
+                        <option value="5">5</option>
                         <option value="6">6</option>
                         <option value="7">7</option>
                     </select>
+                    <label htmlFor="pvp">Is player vs player acceptable to you within a game?</label>
+                    <select id="pvp" name="pvp">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
                     <label htmlFor="exp">How many years have you been roleplaying?</label>
-                    <select id="exp">
+                    <select id="exp" name="exp">
                         <option value="0">0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
@@ -104,14 +110,14 @@ export default class Form extends React.Component {
                         <option value="4+" >4+</option>
                     </select>
                     <label htmlFor="gmexp">Have you ever been a GM?</label>
-                    <select id="gmexp">
-                        <option value="yes">Yes</option>
-                        <option value="no" >No</option>
+                    <select id="gmexp" name="gmexp">
+                        <option value="true">Yes</option>
+                        <option value="false" >No</option>
                     </select>
-                    <label htmlFor="playerexp">Have you ever been a player?</label>
-                    <select id="playerexp">
-                        <option value="yes">Yes!</option>
-                        <option value="no" >No!</option>
+                    <label htmlFor="playexp">Have you ever been a player?</label>
+                    <select id="playexp" name="playexp">
+                        <option value="true">Yes!</option>
+                        <option value="false" >No!</option>
                     </select>
                     <Button type="submit">Submit</Button>
                 </fieldset>

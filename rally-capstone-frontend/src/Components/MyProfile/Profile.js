@@ -14,7 +14,6 @@ export default class Profile extends React.Component {
 
     displayProfile = () => {
         let profile = this.state.profile
-        console.log(profile)
         if(profile.userid){
                 return <div>
                     <ul>

@@ -17,7 +17,7 @@ export default class Header extends React.Component {
         return (
         <div className="header-wrap">
             <h2 className="header-h">Rally!</h2>
-            <input class='search' placeholder='Search' type='text' />
+            <input className='search' placeholder='Search' type='text' />
             <nav className='header-nav'>
                 <ul>
                     <li><Button onClick={this.props.viewCreate}>Create New Profile</Button></li>
