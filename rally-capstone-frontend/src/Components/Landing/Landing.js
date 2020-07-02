@@ -38,7 +38,7 @@ export default class Landing extends React.Component {
             </>
         }else if(this.state.log === false && this.state.reg === true){
             return <>
-                <Register onRegistrationSuccess={this.props.onReg} />
+                <Register />
                 <Button id="cancel" onClick={this.handleButtonCan}>Back</Button>
             </>
         }else if(this.state.log === true && this.state.reg === false){

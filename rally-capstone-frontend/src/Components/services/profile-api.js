@@ -11,14 +11,12 @@ const profileFetch = (...params) => {
 const getProfile = () => {
     return profileFetch(API_ENDPOINT + '/profiles', {
         headers: { 'authorization': 'bearer ' + TokenService.getAuthToken()},
-        body: JSON.stringify()
     }); 
 }
 
-const getProfileMatches = () => {
-    return profileFetch(API_ENDPOINT + '/profiles', {
+const getProfileMatches = (profile) => {
+    return profileFetch(API_ENDPOINT + `/profiles/match?genre=${profile.genre}&romance=${profile.romance}&pvp=${profile.pvp}`, {
         headers: { 'authorization': 'bearer ' + TokenService.getAuthToken()},
-        body: JSON.stringify()
     })
 }
 

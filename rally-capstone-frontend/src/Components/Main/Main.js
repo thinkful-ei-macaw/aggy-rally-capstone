@@ -7,17 +7,24 @@ import Form from '../Form/Form';
 import Profile from '../MyProfile/Profile';
 import Matches from '../Matches/Matches';
 import TokenService from '../services/token';
+import profileApi from '../services/profile-api';
 
 export default class Main extends React.Component {
     constructor(props){
         super(props)
             this.state = {
-                loggedIn: true,
                 default: true,
                 creating: false,
                 viewing: false,
-                matching: false
+                matching: false,
+                profile: {}
             }
+    }
+
+    componentDidMount(){
+        profileApi.getProfile()
+            .then(data => { this.setState({ profile: data }) })
+            .catch()
     }
 
     viewCreate = (e) => {
@@ -60,16 +67,14 @@ export default class Main extends React.Component {
         })
     }
 
-    handleLogout = (e) => {
+    handleLogOut = (e) => {
         e.preventDefault()
-        this.setState({ 
-            loggedIn: false,
-        })
+        this.props.logOut()
         TokenService.clearAuthToken()
     }
 
     displayMain = () => {
-        if(this.state.loggedIn === false){
+        if(this.props.loggedIn === false){
             return <>
                 <Redirect to="/welcome"/>
             </>
@@ -86,11 +91,11 @@ export default class Main extends React.Component {
             </>
         }else if(this.state.viewing === true && this.state.creating === false && this.state.matching === false && this.state.default === false){
             return <>
-                <Profile />
+                <Profile profile={this.state.profile}/>
             </>
         }else if(this.state.matching === true && this.state.creating === false && this.state.viewing === false && this.state.default === false){
             return <>
-                <Matches />
+                <Matches profile={this.state.profile}/>
             </>
         }else if(this.state.creating === true && this.state.viewing === false && this.state.matching === false && this.state.default === false){
             return <>
@@ -107,7 +112,7 @@ export default class Main extends React.Component {
                 viewProfile={this.viewProfile} 
                 viewMain={this.viewMain}
                 viewMatch={this.viewMatch}
-                handleLogout={this.handleLogout}
+                handleLogOut={this.handleLogOut}
                 />
             </header>
             <main className="main-wrap" id="wrap">

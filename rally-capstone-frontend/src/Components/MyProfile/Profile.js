@@ -1,36 +1,36 @@
 import React from 'react';
-import profileApi from '../services/profile-api';
+
 
 export default class Profile extends React.Component {
-    state = {
-        profile: {}
-    }
+    constructor(props){
+        super(props)
+            this.state = {
 
-    componentDidMount(){
-        profileApi.getProfile()
-            .then(data => { this.setState({ profile: data }) })
-            .catch()
+            }
     }
 
     displayProfile = () => {
-        let profile = this.state.profile
+        let profile = this.props.profile
         if(profile.userid){
                 return <div>
                     <ul>
-                        <li>{profile.gamemaster}</li>
-                        <li>{profile.genre}</li>
-                        <li>{profile.romance}</li>
-                        <li>{profile.frequency}</li>
-                        <li>{profile.duration}</li>
-                        <li>{profile.alignment}</li>
-                        <li>{profile.groupsize}</li>
-                        <li>{profile.exp}</li>
-                        <li>{profile.gmexp}</li>
-                        <li>{profile.playexp}</li>
+                        <li>Profile Type: {profile.gamemaster ? "Gamemaster" : "Player"}</li>
+                        <li>Desired Genre: {profile.genre}</li>
+                        <li>Romance Acceptable: {profile.romance ? "Yes" : "No"}</li>
+                        <li>Desired Frequency of Play: {profile.frequency}</li>
+                        <li>Desired Session Duration: {profile.duration}</li>
+                        <li>Preferred Alignment: {profile.alignment}</li>
+                        <li>Preferred Group Size: {profile.groupsize}</li>
+                        <li>PVP Acceptable: {profile.pvp ? "Yes" : "No"}</li>
+                        <li>Years of Experience: {profile.exp}</li>
+                        <li>GM Experience: {profile.gmexp ? "Yes" : "No"}</li>
+                        <li>Player Experience: {profile.playexp ? "Yes" : "No"}</li>
                     </ul>
                 </div>
         }
     }
+
+    //add and edit and delete
 
     render(){
         return (

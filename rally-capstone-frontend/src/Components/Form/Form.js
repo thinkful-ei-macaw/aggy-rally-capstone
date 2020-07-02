@@ -2,7 +2,6 @@ import React from 'react';
 import './form.css';
 import profileApi from '../services/profile-api';
 import { Button } from '../Utility/Utility';
-import { withRouter } from 'react-router-dom';
 
 export default class Form extends React.Component {
     constructor(props){
@@ -71,7 +70,7 @@ export default class Form extends React.Component {
                     <select id="frequency" name="frequency" defaultValue="Bi-weekly">
                         <option value="Twice-weekly">Twice Weekly</option>
                         <option value="Weekly">Weekly</option>
-                        <option value="Bi-weekly">Bi-Weekly</option>
+                        <option value="Bi-Weekly">Bi-Weekly</option>
                         <option value="Month">Month</option>
                     </select>
                     <label htmlFor="duration">How long do you like a session to be?</label>

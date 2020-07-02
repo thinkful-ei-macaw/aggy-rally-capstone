@@ -3,10 +3,6 @@ import AuthApi from '../services/auth-api';
 import { Required, Button, Input } from '../Utility/Utility'
 
 export default class Register extends Component {
-    static defaultProps = {
-        onRegistrationSuccess: () => {}
-    }
-
     state = {
         error: null,
     }
@@ -27,8 +23,6 @@ export default class Register extends Component {
                 user_name.value = ''
                 password.value = ''
                 confirm__password.value = ''
-                this.props.onRegistrationSuccess()
-                //this.setState({ error: null })
             })
             .catch(err => {
                 console.error(err.message)

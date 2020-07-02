@@ -17,8 +17,10 @@ export default class App extends React.Component {
     })
   }
 
-  handleReg = () => {
-    
+  handleLogOut = () => {
+    this.setState({
+      loggedIn: false,
+    })
   }
 
   render() {  
@@ -29,11 +31,13 @@ export default class App extends React.Component {
             <Landing {...props} 
               loggedIn={this.state.loggedIn} 
               onLog={this.handleLogIn}
-              onReg={this.handleReg}
               />
           )}/>
           <Route exact path='/main' render={(props) => (
-            <Main {...props} loggedIn={this.state.loggedIn}/>
+            <Main {...props} 
+            loggedIn={this.state.loggedIn}
+            logOut={this.handleLogOut}
+            />
           )}/>
           <Route path='/' render={() =>(
             <Redirect to='/welcome'/>
