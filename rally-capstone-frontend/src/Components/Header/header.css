@@ -8,12 +8,10 @@
     color: palegoldenrod;
 }
 
-.header-h {
-    padding: 1rem;
-}
-
-input {
-    margin-top: 1rem;
+.header-wrap h1 button {
+    font-size: 2rem;
+    font-family: 'Bangers', cursive;
+    font-weight: 400;
 }
 
 .header-nav ul {
@@ -22,5 +20,20 @@ input {
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+/* Small devices  */
+@media (max-width: 768px) {
+    .header-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+    }
+
+    .header-nav ul li button {
+        margin: 1vw;
+    }
 }
 

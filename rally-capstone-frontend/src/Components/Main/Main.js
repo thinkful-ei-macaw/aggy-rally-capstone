@@ -6,6 +6,9 @@ import Footer from '../Footer/Footer';
 import Form from '../Form/Form';
 import Profile from '../MyProfile/Profile';
 import Matches from '../Matches/Matches';
+import About from '../About/About';
+import Community from '../Community/Community';
+import Support from '../Support/Support';
 import TokenService from '../services/token';
 import profileApi from '../services/profile-api';
 
@@ -17,6 +20,9 @@ export default class Main extends React.Component {
                 creating: false,
                 viewing: false,
                 matching: false,
+                about: false,
+                community: false,
+                support: false,
                 profile: {}
             }
     }
@@ -33,7 +39,10 @@ export default class Main extends React.Component {
             creating: true,
             matching: false,
             viewing: false,
-            default: false
+            default: false,
+            about: false,
+            community: false,
+            support: false,
         })
     }
 
@@ -43,7 +52,10 @@ export default class Main extends React.Component {
             viewing: true,
             creating: false,
             matching: false,
-            default: false
+            default: false,
+            about: false,
+            community: false,
+            support: false,
         })
     }
 
@@ -53,7 +65,10 @@ export default class Main extends React.Component {
             default: true,
             matching: false,
             viewing: false, 
-            creating: false
+            creating: false,
+            about: false,
+            community: false,
+            support: false,
         })
     }
 
@@ -63,7 +78,49 @@ export default class Main extends React.Component {
             matching: true,
             viewing: false, 
             creating: false,
-            default: false
+            default: false,
+            about: false,
+            community: false,
+            support: false,
+        })
+    }
+
+    viewAbout = (e) => {
+        e.preventDefault()
+        this.setState({ 
+            about: true,
+            matching: false,
+            viewing: false, 
+            creating: false,
+            default: false,
+            community: false,
+            support: false,
+        })
+    }
+
+    viewCommunity = (e) => {
+        e.preventDefault()
+        this.setState({ 
+            community: true,
+            matching: false,
+            viewing: false, 
+            creating: false,
+            default: false,
+            about: false,
+            support: false,
+        })
+    }
+
+    viewSupport = (e) => {
+        e.preventDefault()
+        this.setState({ 
+            support: true,
+            matching: false,
+            viewing: false, 
+            creating: false,
+            default: false,
+            community: false,
+            about: false,
         })
     }
 
@@ -89,19 +146,68 @@ export default class Main extends React.Component {
                     <p>Placeholder text about helpful advice for forming a cohesive and stable roleplaying group</p>
                 </div>
             </>
-        }else if(this.state.viewing === true && this.state.creating === false && this.state.matching === false && this.state.default === false){
+        }else if(this.state.viewing === true && 
+            this.state.creating === false && 
+            this.state.matching === false && 
+            this.state.default === false && 
+            this.state.about === false && 
+            this.state.community === false &&
+            this.state.support === false){
             return <>
                 <Profile profile={this.state.profile}/>
             </>
-        }else if(this.state.matching === true && this.state.creating === false && this.state.viewing === false && this.state.default === false){
+        }else if(this.state.matching === true && 
+            this.state.creating === false && 
+            this.state.viewing === false && 
+            this.state.default === false && 
+            this.state.about === false && 
+            this.state.community === false &&
+            this.state.support === false){
             return <>
                 <Matches profile={this.state.profile}/>
             </>
-        }else if(this.state.creating === true && this.state.viewing === false && this.state.matching === false && this.state.default === false){
+        }else if(this.state.creating === true && 
+            this.state.viewing === false && 
+            this.state.matching === false && 
+            this.state.default === false && 
+            this.state.about === false && 
+            this.state.community === false &&
+            this.state.support === false){
             return <>
                 <Form />
             </>
-    }}
+        }else if(this.state.about === true && 
+            this.state.creating === false && 
+            this.state.matching === false && 
+            this.state.default === false && 
+            this.state.viewing === false && 
+            this.state.community === false &&
+            this.state.support === false){
+            return <>
+                <About />
+            </>
+        }else if(this.state.community === true && 
+            this.state.creating === false && 
+            this.state.matching === false && 
+            this.state.default === false && 
+            this.state.about === false && 
+            this.state.viewing === false &&
+            this.state.support === false){
+            return <>
+                <Community />
+            </>
+        }else if(this.state.support === true && 
+            this.state.creating === false && 
+            this.state.matching === false && 
+            this.state.default === false && 
+            this.state.about === false && 
+            this.state.community === false &&
+            this.state.viewing === false){
+            return <>
+                <Support />
+            </>
+        }
+}
 
     render(){
         return (
@@ -120,7 +226,11 @@ export default class Main extends React.Component {
                 {this.displayMain()}
             </main>
             <footer>
-                <Footer />
+                <Footer 
+                viewAbout={this.viewAbout}
+                viewCommunity={this.viewCommunity}
+                viewSupport={this.viewSupport}
+                />
             </footer>
         </div>
     )}

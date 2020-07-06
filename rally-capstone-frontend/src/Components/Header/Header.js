@@ -16,13 +16,11 @@ export default class Header extends React.Component {
     render(){
         return (
         <div className="header-wrap">
-            <h2 className="header-h">Rally!</h2>
-            <input className='search' placeholder='Placeholder!' type='text' />
+            <h1><Button onClick={this.props.viewMain}>Rally!</Button></h1>
             <nav className='header-nav'>
                 <ul>
                     <li><Button onClick={this.props.viewCreate}>Create New Profile</Button></li>
                     <li><Button onClick={this.props.viewProfile}>View Active Profile</Button></li>
-                    <li><Button onClick={this.props.viewMain}>Return to Main</Button></li>
                     <li><Button onClick={this.props.viewMatch}>View Matches</Button></li>
                     <li><Button onClick={this.props.handleLogOut}>Log out</Button></li>
                 </ul>

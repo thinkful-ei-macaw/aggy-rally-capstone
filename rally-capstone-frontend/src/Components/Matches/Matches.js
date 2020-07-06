@@ -21,30 +21,32 @@ export default class Matches extends React.Component {
         let matches = this.state.matches
         if(matches){
            const profileMatches = matches.map((a) => (
-            <ul key={a.id}>
-                <li>Profile Type: {a.gamemaster ? "Gamemaster" : "Player"}</li>
-                <li>Desired Genre: {a.genre}</li>
-                <li>Romance Acceptable: {a.romance ? "Yes" : "No"}</li>
-                <li>Desired Frequency of Play: {a.frequency}</li>
-                <li>Desired Session Duration: {a.duration}</li>
-                <li>Preferred Alignment: {a.alignment}</li>
-                <li>Preferred Group Size: {a.groupsize}</li>
-                <li>PVP Acceptable: {a.pvp ? "Yes" : "No"}</li>
-                <li>Years of Experience: {a.exp}</li>
-                <li>GM Experience: {a.gmexp ? "Yes" : "No"}</li>
-                <li>Player Experience: {a.playexp ? "Yes" : "No"}</li>
-            </ul>
+            <li className="match-li" key={a.id}>
+                <p>Profile Type: {a.gamemaster ? "Gamemaster" : "Player"}</p>
+                <p>Desired Genre: {a.genre}</p>
+                <p>Romance Acceptable: {a.romance ? "Yes" : "No"}</p>
+                <p>Desired Frequency of Play: {a.frequency}</p>
+                <p>Desired Session Duration: {a.duration}</p>
+                <p>Preferred Alignment: {a.alignment}</p>
+                <p>Preferred Group Size: {a.groupsize}</p>
+                <p>PVP Acceptable: {a.pvp ? "Yes" : "No"}</p>
+                <p>Years of Experience: {a.exp}</p>
+                <p>GM Experience: {a.gmexp ? "Yes" : "No"}</p>
+                <p>Player Experience: {a.playexp ? "Yes" : "No"}</p>
+            </li>
            ))
            return profileMatches
         }else{
-            return <p>No matches found</p>
+            return <p>No matches found! Widen your search!</p>
         }
     }
 
     render(){
         return (
             <div className="match-wrap">
-                {this.displayMatches()}
+                <ul>
+                    {this.displayMatches()}
+                </ul>
             </div>
     )}
 }

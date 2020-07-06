@@ -7,8 +7,6 @@ main h1 {
 }
 
 .main-wrap {
-    padding-left: 1rem;
-    padding-right: 1rem;
     color: palegoldenrod;
     display: flex;
     align-items: center;
@@ -28,6 +26,12 @@ button {
 
 #wrap {
     padding: 1rem;
-    margin-left: 6rem;
-    margin-right: 6rem;
+    margin-left: 6vh;
+    margin-right: 6vh;
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 320px) {
+    
 }
