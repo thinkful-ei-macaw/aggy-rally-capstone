@@ -139,11 +139,20 @@ export default class Main extends React.Component {
             return <>
                 <div className="default-wrap">
                     <h3>How-to</h3>
-                    <p>Placeholder text about how to use this service</p>
+                    <p>If you are new to Rally! please refer to the Create New Profile tab to create a match profile and get started.
+                        It's our goal to help roleplayers find other roleplayers with similar outlooks and desires for their games.
+                        The View Matches tab will list other player profiles who want the same genre, and have similar feelings on
+                        romantic and player vs player content within games. The rest of the critera may vary, giving you choice of
+                        who to contact so you can work on forming a gaming group as you see fit!
+                    </p>
                     <h3>Upcoming</h3>
-                    <p>Placeholder text about upcoming features</p>
+                    <p>We intend to implement a system to message potential players directly on Rally!, as well as a more detailed
+                        profile and account set-up.
+                    </p>
                     <h3>Advice</h3>
-                    <p>Placeholder text about helpful advice for forming a cohesive and stable roleplaying group</p>
+                    <p>We recommend contacting other players with similar enough profiles. It may not be easy to form a full group
+                        using only players with exactly the same details, but roleplaying can in part be about compromise!
+                    </p>
                 </div>
             </>
         }else if(this.state.viewing === true && 

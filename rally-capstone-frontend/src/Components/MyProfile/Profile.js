@@ -26,6 +26,8 @@ export default class Profile extends React.Component {
                         <p>Player Experience: {profile.playexp ? "Yes" : "No"}</p>
                     </li>
             return currentProfile
+        }else{
+            return <p>No profile found! Head over to Create New Profile to get started!</p>
         }
     }
 

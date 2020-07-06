@@ -33,11 +33,12 @@ export default class Matches extends React.Component {
                 <p>Years of Experience: {a.exp}</p>
                 <p>GM Experience: {a.gmexp ? "Yes" : "No"}</p>
                 <p>Player Experience: {a.playexp ? "Yes" : "No"}</p>
+                <p>Player Email: Placeholder</p>
             </li>
            ))
            return profileMatches
         }else{
-            return <p>No matches found! Widen your search!</p>
+            return <p>No matches found!</p>
         }
     }
 

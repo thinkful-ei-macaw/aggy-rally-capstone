@@ -6,7 +6,8 @@ export default class Support extends React.Component {
        return (
         <div className="support-wrap">
             <h2>Support Rally!</h2>
-            <p>Under Construction! Ideally this will be a page to contact Rally! support about issues on the site, or account resolutions.</p>
+            <p>Under Construction!</p>
+            <p>Ideally this will be a page to contact Rally! support about issues on the site, or account resolutions.</p>
         </div>
     )}
 }
