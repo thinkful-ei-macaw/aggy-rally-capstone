@@ -12,7 +12,7 @@ export default class Matches extends React.Component {
 
     componentDidMount(){
         let profile = this.props.profile
-        if(profile){
+        if(profile.genre){
             profileApi.getProfileMatches(profile)
             .then(data => { this.setState({ matches: data }) })
             .catch()
