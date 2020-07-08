@@ -1,5 +1,7 @@
 import React from 'react';
-import './profile.css'
+import './profile.css';
+import api from '../services/profile-api';
+import { Button } from '../Utility/Utility';
 
 export default class Profile extends React.Component {
     constructor(props){
@@ -31,6 +33,14 @@ export default class Profile extends React.Component {
         }
     }
 
+    profileDelete = () => {
+        let profile = this.props.profile
+        api.deleteProfile(profile)
+        if(!profile){
+            this.props.viewCreate()
+        }
+    }
+
     //add and edit and delete
 
     render(){
@@ -39,6 +49,7 @@ export default class Profile extends React.Component {
                 <ul>
                     {this.displayProfile()}
                 </ul>
+                <Button onClick={this.profileDelete}>Delete Profile</Button>
             </div>
     )}
 }

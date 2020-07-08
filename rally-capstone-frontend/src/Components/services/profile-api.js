@@ -20,6 +20,17 @@ const getProfileMatches = (profile) => {
     })
 }
 
+const deleteProfile = (profile) => {
+    return profileFetch(API_ENDPOINT + '/profiles', {
+        method: 'DELETE',
+        headers: { 
+            'content-type': 'application/json',
+            'authorization': 'bearer ' + TokenService.getAuthToken()
+        },
+    })
+    .then(res => res.json())
+}
+
 const addProfiles = profile => {
     return profileFetch(API_ENDPOINT + '/profiles', {
         method: 'POST',
@@ -35,4 +46,5 @@ export default {
     getProfile,
     addProfiles,
     getProfileMatches,
+    deleteProfile,
 }

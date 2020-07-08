@@ -163,7 +163,7 @@ export default class Main extends React.Component {
             this.state.community === false &&
             this.state.support === false){
             return <>
-                <Profile profile={this.state.profile}/>
+                <Profile profile={this.state.profile} viewCreate={this.viewCreate}/>
             </>
         }else if(this.state.matching === true && 
             this.state.creating === false && 
