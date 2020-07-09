@@ -25,7 +25,6 @@ export default class App extends React.Component {
 
   render() {  
     return (
-    <div className='App'>
         <Switch>
           <Route path='/welcome' render={(props) => (
             <Landing {...props} 
@@ -43,7 +42,6 @@ export default class App extends React.Component {
             <Redirect to='/welcome'/>
           )}/>
         </Switch>
-    </div>
   );
 }
 }

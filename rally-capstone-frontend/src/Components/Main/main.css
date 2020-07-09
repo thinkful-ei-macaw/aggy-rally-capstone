@@ -1,24 +1,26 @@
-body {
-    background-color: #313131;
-}
-
 main h1 {
     padding: 1rem;
 }
 
 .main-wrap {
-    color: palegoldenrod;
+    color: #473219;
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: #636363;
+    background-color: #E0CEB8;
+    border: 1px solid #94816A;
+    height: 100vh;
+}
+
+.default-wrap h3, p {
+    padding: .5rem;
 }
 
 button {
     border: none;
     text-decoration: none;
     background-color: inherit;
-    color: palegoldenrod;
+    color: #473219;
     font-weight: bold;
     cursor: pointer;
     margin: 1rem;
@@ -28,6 +30,10 @@ button {
     padding: 1rem;
     margin-left: 6vh;
     margin-right: 6vh;
+}
+
+footer {
+    flex-shrink: 0;
 }
 
 

@@ -220,7 +220,7 @@ export default class Main extends React.Component {
 
     render(){
         return (
-        <div>
+            <>
             <header>
                 <Header 
                 viewCreate={this.viewCreate} 
@@ -241,6 +241,6 @@ export default class Main extends React.Component {
                 viewSupport={this.viewSupport}
                 />
             </footer>
-        </div>
+            </>
     )}
 }

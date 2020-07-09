@@ -3,7 +3,8 @@
     align-items: center;
     flex-direction: column;
     padding: 2rem;
-    color: palegoldenrod;
+    color: #473219;
+    background-color: #6A8694;
 }
 
 .user, .password {
