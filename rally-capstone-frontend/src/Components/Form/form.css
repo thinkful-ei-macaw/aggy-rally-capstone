@@ -1,6 +1,10 @@
-.profile {
+.profile-set {
     display: flex;
     flex-direction: column;
+}
+
+.form-wrap {
+    box-sizing: border-box;
 }
 
 label, form {

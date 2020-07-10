@@ -9,7 +9,7 @@ main h1 {
     flex-direction: column;
     background-color: #E0CEB8;
     border: 1px solid #94816A;
-    height: 100vh;
+    flex: 1 0 auto;
 }
 
 .default-wrap h3, p {
@@ -34,10 +34,4 @@ button {
 
 footer {
     flex-shrink: 0;
-}
-
-
-/* Small devices (tablets, 768px and up) */
-@media (min-width: 320px) {
-    
 }

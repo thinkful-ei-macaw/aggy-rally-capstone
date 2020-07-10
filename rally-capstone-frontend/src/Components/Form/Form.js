@@ -37,13 +37,13 @@ export default class Form extends React.Component {
 
     render(){
         return (
-        <div className="form-wrap" id="wrap">
+        <div className="form-wrap">
             <h2>Match Profiles</h2>
             <p>It is our goal at Rally! is to match potential players together using a set of simple, but critical critera. We prefer not to allow options that are more generic,
                 such as 'anything is fine', or 'all of the above' specifically to foster more compatability. Please answer as accurately as possible, to improve match results!
             </p>
             <form onSubmit={this.handleForm}>
-                <fieldset className="profile">
+                <fieldset className="profile-set">
                     <legend>Create your Match Profile</legend>
                     <label htmlFor="gamemaster">Is this a GM profile?</label>
                     <select id="gamemaster" name="gamemaster" defaultValue="no">
