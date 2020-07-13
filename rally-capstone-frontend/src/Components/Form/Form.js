@@ -106,7 +106,7 @@ export default class Form extends React.Component {
                         <option value="1" >1</option>
                         <option value="2">2</option>
                         <option value="3" >3</option>
-                        <option value="4+" >4+</option>
+                        <option value="4" >4+</option>
                     </select>
                     <label htmlFor="gmexp">Have you ever been a GM?</label>
                     <select id="gmexp" name="gmexp">
