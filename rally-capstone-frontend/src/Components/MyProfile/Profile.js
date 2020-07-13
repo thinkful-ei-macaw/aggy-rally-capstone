@@ -2,6 +2,7 @@ import React from 'react';
 import './profile.css';
 import api from '../services/profile-api';
 import { Button } from '../Utility/Utility';
+import { Redirect } from 'react-router-dom';
 
 export default class Profile extends React.Component {
     constructor(props){
@@ -36,9 +37,8 @@ export default class Profile extends React.Component {
     profileDelete = () => {
         let profile = this.props.profile
         api.deleteProfile(profile)
-        if(!profile){
-            this.props.viewCreate()
-        }
+        this.props.viewCreate()
+
     }
 
     //add and edit and delete
