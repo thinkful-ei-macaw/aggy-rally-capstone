@@ -68,7 +68,7 @@ export default class Form extends React.Component {
                     </select>
                     <label htmlFor="frequency">How often do you prefer to play?</label>
                     <select id="frequency" name="frequency" defaultValue="Bi-weekly">
-                        <option value="Twice-weekly">Twice Weekly</option>
+                        <option value="Twice Weekly">Twice Weekly</option>
                         <option value="Weekly">Weekly</option>
                         <option value="Bi-Weekly">Bi-Weekly</option>
                         <option value="Month">Month</option>

@@ -20,3 +20,8 @@ The app allows users to create a match profile which uses specifically tailored 
 * Node is used for the server
 * The Tables and database are made using postgresql
 * The styling is done using standard CSS
+
+Test Account
+---
+Username: tester
+Password: testerpass

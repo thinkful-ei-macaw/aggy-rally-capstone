@@ -21,7 +21,7 @@ const getProfileMatches = (profile) => {
 }
 
 const deleteProfile = (profile) => {
-    return profileFetch(API_ENDPOINT + '/profiles', {
+    return profileFetch(API_ENDPOINT + '/profiles/' + profile.id, {
         method: 'DELETE',
         headers: { 
             'content-type': 'application/json',
