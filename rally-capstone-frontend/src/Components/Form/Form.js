@@ -22,11 +22,11 @@ export default class Form extends React.Component {
         const alignment = e.target.alignment.value
         const groupsize = e.target.groupsize.value
         const pvp = e.target.pvp.value
-        const exp = e.target.exp.value
+        const experience = e.target.experience.value
         const gmexp = e.target.gmexp.value
         const playexp = e.target.playexp.value
 
-        const newProfile = {gm, genre, romance, frequency, duration, alignment, groupsize, pvp, exp, gmexp, playexp}
+        const newProfile = {gm, genre, romance, frequency, duration, alignment, groupsize, pvp, experience, gmexp, playexp}
 
         profileApi.addProfiles(newProfile)
             .then(profile => {
@@ -100,8 +100,8 @@ export default class Form extends React.Component {
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                     </select>
-                    <label htmlFor="exp">How many years have you been roleplaying?</label>
-                    <select id="exp" name="exp">
+                    <label htmlFor="experience">How many years have you been roleplaying?</label>
+                    <select id="experience" name="experience">
                         <option value="0">0</option>
                         <option value="1" >1</option>
                         <option value="2">2</option>
