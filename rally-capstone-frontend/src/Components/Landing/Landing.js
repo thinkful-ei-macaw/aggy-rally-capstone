@@ -57,6 +57,11 @@ export default class Landing extends React.Component {
         <div className="landing-wrap">
             <h1>Rally!</h1>
             {this.displayLanding()}
+            <div className="landing-instructions">
+                <h3>For Testers!</h3>
+                <p>Username: tester, Password: testerpass</p>
+                <p>Log in here, or register if desired, and navigate to Create New Profile to get started. Further instructions on main.</p>
+            </div>
         </div>
     )}
 }

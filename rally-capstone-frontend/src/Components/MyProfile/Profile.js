@@ -38,7 +38,6 @@ export default class Profile extends React.Component {
         let profile = this.props.profile
         api.deleteProfile(profile)
         this.props.viewCreate()
-
     }
 
     //add and edit and delete
