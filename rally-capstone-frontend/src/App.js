@@ -3,13 +3,15 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import Landing from './Components/Landing/Landing';
 import Main from './Components/Main/Main';
-
+import TokenService from './token';
 
 export default class App extends React.Component {
   state = {
     hasError: false,
     loggedIn: false,
   }
+
+  
 
   handleLogIn = () => {
     this.setState({
@@ -24,6 +26,10 @@ export default class App extends React.Component {
   }
 
   render() {  
+    if(TokenService.hasAuthToken()) {
+      this.setState({loggedIn: true})
+    }
+
     return (
         <Switch>
           <Route path='/welcome' render={(props) => (
