@@ -18,3 +18,15 @@ Test Account
 ---
 Username: tester
 Password: testerpass
+
+
+Screen Shots
+---
+
+![screenshot of login page](../public/screenShots/login.png?raw=true)
+
+
+![screenshot of match form page](../public/screenShots/match.png?raw=true)
+
+
+![screenshot of profile page](../public/screenShots/profile.png?raw=true)
