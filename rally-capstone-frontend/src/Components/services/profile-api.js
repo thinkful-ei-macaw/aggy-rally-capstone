@@ -21,14 +21,13 @@ const getProfileMatches = (profile) => {
 }
 
 const deleteProfile = (profile) => {
-    return profileFetch(API_ENDPOINT + '/profiles/' + profile.id, {
+    return fetch(API_ENDPOINT + '/profiles/' + profile.id, {
         method: 'DELETE',
         headers: { 
             'content-type': 'application/json',
             'authorization': 'bearer ' + TokenService.getAuthToken()
         },
     })
-    .then(res => res.json())
 }
 
 const addProfiles = profile => {

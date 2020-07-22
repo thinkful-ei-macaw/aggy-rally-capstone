@@ -23,7 +23,7 @@ export default class Profile extends React.Component {
                         <p>Preferred Alignment: {profile.alignment}</p>
                         <p>Preferred Group Size: {profile.groupsize}</p>
                         <p>PVP Acceptable: {profile.pvp ? "Yes" : "No"}</p>
-                        <p>Years of Experience: {profile.exp}</p>
+                        <p>Years of Experience: {profile.experience}</p>
                         <p>GM Experience: {profile.gmexp ? "Yes" : "No"}</p>
                         <p>Player Experience: {profile.playexp ? "Yes" : "No"}</p>
                     </li>

@@ -39,8 +39,7 @@ export default class Main extends React.Component {
         console.log(profile)
     }
 
-    viewCreate = (e) => {
-        e.preventDefault()
+    viewCreate = () => {
         this.setState({ 
             creating: true,
             matching: false,
@@ -52,8 +51,7 @@ export default class Main extends React.Component {
         })
     }
 
-    viewProfile = (e) => {
-        e.preventDefault()
+    viewProfile = () => {
         this.setState({ 
             viewing: true,
             creating: false,
@@ -65,8 +63,7 @@ export default class Main extends React.Component {
         })
     }
 
-    viewMain = (e) => {
-        e.preventDefault()
+    viewMain = () => {
         this.setState({ 
             default: true,
             matching: false,
@@ -78,8 +75,7 @@ export default class Main extends React.Component {
         })
     }
 
-    viewMatch = (e) => {
-        e.preventDefault()
+    viewMatch = () => {
         this.setState({ 
             matching: true,
             viewing: false, 
@@ -91,8 +87,7 @@ export default class Main extends React.Component {
         })
     }
 
-    viewAbout = (e) => {
-        e.preventDefault()
+    viewAbout = () => {
         this.setState({ 
             about: true,
             matching: false,
@@ -104,8 +99,7 @@ export default class Main extends React.Component {
         })
     }
 
-    viewCommunity = (e) => {
-        e.preventDefault()
+    viewCommunity = () => {
         this.setState({ 
             community: true,
             matching: false,
@@ -117,8 +111,7 @@ export default class Main extends React.Component {
         })
     }
 
-    viewSupport = (e) => {
-        e.preventDefault()
+    viewSupport = () => {
         this.setState({ 
             support: true,
             matching: false,
