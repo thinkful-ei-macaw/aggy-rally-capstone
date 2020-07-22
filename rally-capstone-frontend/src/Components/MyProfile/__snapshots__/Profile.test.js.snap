@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Profile /> render this UI as expected 1`] = `
+<div
+  className="profile-wrap"
+>
+  <ul>
+    <p>
+      No profile found! Head over to Create New Profile to get started!
+    </p>
+  </ul>
+  <button
+    className="Button "
+    onClick={[Function]}
+  >
+    Delete Profile
+  </button>
+</div>
+`;

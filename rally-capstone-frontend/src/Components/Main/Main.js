@@ -25,12 +25,18 @@ export default class Main extends React.Component {
                 support: false,
                 profile: {}
             }
+        this.updateProfile = this.updateProfile.bind(this);
     }
 
     componentDidMount(){
         profileApi.getProfile()
             .then(data => { this.setState({ profile: data }) })
             .catch()
+    }
+
+    updateProfile(profile){
+        this.setState({profile: profile})
+        console.log(profile)
     }
 
     viewCreate = (e) => {
@@ -183,7 +189,7 @@ export default class Main extends React.Component {
             this.state.community === false &&
             this.state.support === false){
             return <>
-                <Form />
+                <Form updateProfile={this.updateProfile}/>
             </>
         }else if(this.state.about === true && 
             this.state.creating === false && 

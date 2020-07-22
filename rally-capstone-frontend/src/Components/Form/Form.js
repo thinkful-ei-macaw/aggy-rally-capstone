@@ -7,7 +7,7 @@ export default class Form extends React.Component {
     constructor(props){
         super(props)
             this.state = {
-                profile: {}
+                
             }
     }
 
@@ -30,9 +30,9 @@ export default class Form extends React.Component {
 
         profileApi.addProfiles(newProfile)
             .then(profile => {
-                //possibly redirect later
+                this.props.updateProfile(profile)
             })
-            .catch(console.error)
+            .catch(console.error);
     }
 
     render(){

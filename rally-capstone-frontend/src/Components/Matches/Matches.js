@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import profileApi from '../services/profile-api';
-import './matches.css'
+import './matches.css';
 
 export default class Matches extends React.Component {
     constructor(props){
